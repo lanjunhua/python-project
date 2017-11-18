@@ -1,0 +1,275 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+import xgboost
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return(arr)
+    pivot = arr[len(arr) / 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+
+print(quicksort([3,6,8,10,1,2,1,5]))
+
+arr = [3,6,8,10,1,2,1,5]
+print(arr)
+print(type(arr))
+#TypeError: list indices must be integers or slices, not float
+
+x = 3
+print(x, type(x))
+
+print(x + 1)
+print(x - 1)
+print(x * 2)
+print(x ** 2)
+
+print(x += 1)
+y = 2.5
+print(type(y))
+
+
+t, f = True, False
+print(type(t))
+
+print(t and f)
+print(t or f)
+print(not t)
+print(t != f)
+
+
+hello = 'hello'
+world = 'world'
+print(hello, len(hello))
+
+hw = hello + ' ' + world
+print(hw)
+
+hw12 = '%s %s %d' % (hello, world, 12)
+print(hw12)
+
+
+s = 'hello'
+print(s.capitalize())
+print(s.upper())
+print(s.rjust(7))
+print(s.center(7))
+print(s.replace('l', '(ell)'))
+print('   world'.strip())
+
+xs = [3, 1, 2]
+print(xs, xs[2])
+print(type(xs))
+
+xs[2] = 'foo'
+print(xs)
+
+xs.append('bar')
+print(xs)
+
+
+nums = range(5)
+print(nums)
+print(nums[2:4])
+
+
+
+
+animals = ['cat', 'dog', 'monkey']
+for animal in animals:
+    print(animal)
+
+for index, animal in enumerate(animals):
+    print('#%d: %s') % (index + 1, animal)
+    
+    
+nums = [0, 1, 2, 3, 4]
+squares = []
+for x in nums:
+    squares.append(x ** 2)
+print(squares)
+
+
+squares = [x ** 2 for x in nums]
+print(squares)
+
+even_squares = [x ** 2 for x in nums if x % 2 == 0]
+print(even_squares)
+
+
+d = {'cat':'cute', 'dog':'furry'}
+print(d['dog'])
+print('cat' in d)
+
+d['fish'] = 'wet'
+print(d)
+
+print(d.get('monkey', 'N/A'))
+print(d)
+del[d['fish']]
+print(d)
+
+
+d = {'person':2, 'cat':4, 'spider':8}
+for animal in d:
+    legs = d[animal]
+    print('A %s has %d legs' % (animal, legs))
+    
+    
+for animal, legs in d.items():
+    print('A %s has %d legs' % (animal, legs))
+    
+    
+nums = [0, 1, 2, 3, 4]
+even_num_to_square = {x: x **2 for x in nums if x % 2 == 0}
+
+
+
+animals = {'cat', 'dog'}
+print('cat' in animals)
+
+animals.add('fish')
+print(animals)
+print(len(animals))
+print('fish' in animals)
+
+
+for index, animal in enumerate(animals):
+    print('#%d: %s' % (index, animal))
+    
+    
+    
+print(range(30))
+
+
+from math import sqrt
+print({int(sqrt(x)) for x in range(30)})
+
+
+
+d = {(x, x + 1) : x for x in range(10)}
+print(d)
+t = (5,6)
+print(type(t))
+print(type(d))
+
+print(d[t])
+
+
+
+# function
+def sign(x):
+    if(x > 0):
+        return 'positive'
+    elif x < 0:
+        return 'negative'
+    else:
+        return 'zero'
+            
+for x in [-1, 0, 1]:
+    print(sign(x))
+    
+    
+def hello(name, loud = False):
+    if loud:
+        print('HELLO, %s' % name.upper())
+    else:
+        print('Hello, %s' % name)
+
+
+hello('Bob')
+hello('Fred', loud = True)
+
+
+class Greeter:
+    # Constructor
+    def __init__(self, name):
+        self.name = name
+        
+    # instance method
+    def greet(self, loud = False):
+        if loud:
+            print('HELLO, %s', %self.name.upper())
+        else:
+            print('Hello, %s', %self.name)
+    
+    
+import numpy as np
+
+a = np.array([1,2,3])
+print(type(a))
+print(a[0])
+print(a)
+
+
+b = np.array([[1,2,3],[4,5,6]])
+print(b)
+print(b.shape)
+print(b[0,0], b[0,1], b[1,0])
+
+
+a = np.zeros((2,2))
+print(a)
+
+b = np.ones((1,2))
+
+c = np.full((2,2), 7)
+
+d = np.eye(2)
+
+e = np.random.random((2,2))
+
+
+
+import numpy as np
+
+a = np.array([[1,2,3,4], [5,6,7,8],[9,10,11,12]])
+print(a.shape)
+
+b = a[:2, 1:3]
+
+row_r1 = a[1, :]
+row_r2 = a[1:2, :]
+row_r3 = a[[1], :]
+
+
+print(row_r1, row_r1.shape, type(row_r1))
+print(row_r2, row_r2.shape, type(row_r2))
+print(row_r3, row_r3.shape, type(row_r3))
+
+
+
+a = np.array([[1,2], [3,4], [5,6]])
+print(a, a.shape, type(a))
+
+print(a[[0,1,2], [0,1,0]])
+print(np.array([a[0,0], a[1,1], a[2,0]]))
+
+print(np.arange(4))
+
+
+
+#matplotlib
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+
+x = np.arange(0, 3 * np.pi, 0.1)
+y = np.sin(x)
+plt.plot(x, y)
+
+y_cos = np.cos(x)
+
+plt.plot(x, y)
+plt.plot(x, y_cos)
+plt.xlabel('x axis label')
+plt.ylabel('y axis label')
+plt.title('Sine and Cosine')
+plt.legend(['Sine', 'Cosine'])
